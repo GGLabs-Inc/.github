@@ -1,4 +1,4 @@
-# 💛 YellowMeter
+# 💛 YellowMeter OS
 
 > *"If Web2 monetizes clicks, Web3 should monetize actions."*
 
