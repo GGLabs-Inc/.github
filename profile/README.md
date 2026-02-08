@@ -32,7 +32,6 @@ graph TD
     subgraph Server [Backend Layer]
         API[NestJS API Gateway]
         Engine[⚡ Nitrolite Engine]
-        DB[(Supabase DB)]
     end
     
     subgraph Blockchain [On-Chain Layer]
@@ -41,18 +40,25 @@ graph TD
     end
 
     %% Connections
-    User -->|Open App| UI
+    User -->|High Freq Actions| UI
     UI -->|Resolve Identity| Wagmi
     Wagmi -->|Query| ENS
     
-    UI -->|Action e.g. move piece| Session
-    Session -->|Sign Off-Chain| API
+    UI -->|Sign Channel State| Session
     
-    API -->|Validate V3 Strict| Engine
-    Engine -->|Update State| DB
+    %% Key Interaction
+    Session == V3 Strict Protocol ==> API
+    API == Validate & Counter-Sign ==> Engine
     
-    UI -.->|1. Deposit / 3. Settle| Yellow
-    Engine -.->|Verify Balance| Yellow
+    %% Blockchain Settlement
+    UI -.->|1. Deposit Funds| Yellow
+    UI -.->|3. Settlement| Yellow
+    
+    Engine -.->|Virtual Balance Check| Yellow
+
+    %% Styling
+    style Yellow fill:#F7E025,stroke:#333,stroke-width:4px,color:black
+    style Engine fill:#FFF9C4,stroke:#F7E025,stroke-width:2px,color:black
 ```
 
 ---
@@ -149,5 +155,5 @@ YellowMeter OS includes a decentralized **Chat Application** powered by ENS.
 ---
 
 <div align="center">
-  <i>Created with 💛 by the YellowMeter Team</i>
+  <i>Created with ⚡ by the YellowMeter Team</i>
 </div>
