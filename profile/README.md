@@ -16,6 +16,7 @@
 ## 💡 The Vision
 
 Web3 has a usability crisis. Transactions are slow, expensive, and intimidating.
+*   **Notion :** https://www.notion.so/YellowMeter-OS-301d2346b312802b9421f8c1a8e6c97f
 *   **The Problem:** Building a decentralized chess game or a chat app is impossible if every move/message costs gas and takes 12 seconds to confirm.
 *   **The Solution:** **YellowMeter OS**. A desktop-like interface that abstracts the blockchain complexity using **State Channels** and **Session Keys**. It feels like Web2, but settles on Web3.
 
